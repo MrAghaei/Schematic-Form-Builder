@@ -33,7 +33,7 @@ export const useFormStore = create<FormState>((set) => ({
     }),
   removeField: (id) =>
     set((state) => ({
-      fields: state.fields.filter((f) => fi.id !== id),
+      fields: state.fields.filter((f) => f.id !== id),
       selectedFieldId:
         state.selectedFieldId === id ? null : state.selectedFieldId,
     })),
