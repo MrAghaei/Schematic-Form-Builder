@@ -10,8 +10,9 @@ import { CSS } from "@dnd-kit/utilities";
 import { Trash2, GripVertical } from "lucide-react";
 import clsx from "clsx";
 import { useFormStore } from "../stores/useFormStore";
+import type { FormField } from "../types/form";
 
-const SortableField = ({ field }: { field: any }) => {
+const SortableField = ({ field }: { field: FormField }) => {
   const {
     attributes,
     listeners,
@@ -91,7 +92,7 @@ export const Canvas = () => {
   return (
     <main
       className="flex-1 bg-slate-50/50 p-8 overflow-y-auto"
-      onClick={() => setSelectedField(null)} // کلیک روی فضای خالی = عدم انتخاب
+      onClick={() => setSelectedField(null)}
     >
       <div className="max-w-2xl mx-auto">
         <DndContext

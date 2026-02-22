@@ -8,7 +8,6 @@ export const PropertiesPanel = () => {
 
   return (
     <aside className="w-96 border-l border-slate-200 bg-white flex flex-col h-full shadow-xl shadow-slate-200/50 z-10">
-      {/* بخش بالایی: فرم تنظیمات */}
       <div className="flex-1 overflow-y-auto p-6">
         <div className="flex items-center gap-2 mb-6 text-slate-700">
           <Settings2 className="w-5 h-5" />
@@ -73,8 +72,6 @@ export const PropertiesPanel = () => {
                   Required Field
                 </span>
               </label>
-
-              {/* اینجا جای تمرین تو برای اضافه کردن min/max هست */}
             </div>
           </div>
         ) : (
@@ -89,7 +86,6 @@ export const PropertiesPanel = () => {
         )}
       </div>
 
-      {/* بخش پایینی: نمایش کد */}
       <div className="h-1/3 bg-slate-900 border-t border-slate-800 flex flex-col">
         <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800/50 bg-slate-950/30">
           <div className="flex items-center gap-2 text-slate-400">
