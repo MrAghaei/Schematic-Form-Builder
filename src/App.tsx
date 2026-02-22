@@ -57,7 +57,7 @@ function App() {
         </div>
 
         {/* Properties Panel */}
-        <aside className="w-full lg:w-80 xl:w-96 shrink-0 bg-white flex flex-col lg:border-l border-slate-200 lg:overflow-y-auto z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.1)] lg:shadow-none">
+        <aside className="w-full lg:w-80 xl:w-96 shrink-0 bg-white flex flex-col lg:border-l border-slate-200 lg:overflow-y-auto overflow-x-hidden z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.1)] lg:shadow-none">
           <PropertiesPanel />
         </aside>
       </main>

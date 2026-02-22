@@ -33,13 +33,16 @@ const SortableField = ({ field }: { field: FormField }) => {
       ref={setNodeRef}
       style={style}
       className={clsx(
-        "relative flex items-center gap-4 p-4 bg-white border rounded-xl shadow-sm transition-all group",
+        "relative flex items-center gap-4 p-4 bg-white border rounded-xl shadow-sm transition-colors group cursor-pointer",
         isDragging ? "z-50 opacity-50 scale-105 shadow-xl" : "z-0",
         selectedFieldId === field.id
           ? "border-blue-500 ring-2 ring-blue-500/20"
           : "border-slate-200 hover:border-slate-300",
       )}
-      onClick={() => setSelectedField(field.id)}
+      onClick={(e) => {
+        e.stopPropagation();
+        setSelectedField(field.id);
+      }}
     >
       <button
         {...attributes}
