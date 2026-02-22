@@ -11,7 +11,6 @@ import { Trash2, GripVertical } from "lucide-react";
 import clsx from "clsx";
 import { useFormStore } from "../stores/useFormStore";
 
-// آیتم قابل درگ
 const SortableField = ({ field }: { field: any }) => {
   const {
     attributes,
