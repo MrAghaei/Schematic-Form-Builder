@@ -33,10 +33,10 @@ const SortableField = ({ field }: { field: FormField }) => {
       ref={setNodeRef}
       style={style}
       className={clsx(
-        "relative flex items-center gap-4 p-4 bg-white border rounded-xl shadow-sm transition-colors group cursor-pointer",
+        "relative flex items-center gap-4 p-4 bg-slate-950 rounded-xl shadow-sm transition-colors group cursor-pointer",
         isDragging ? "z-50 opacity-50 scale-105 shadow-xl" : "z-0",
         selectedFieldId === field.id
-          ? "border-blue-500 ring-2 ring-blue-500/20"
+          ? "border-blue-500 ring-2 ring-blue-900"
           : "border-slate-200 hover:border-slate-300",
       )}
       onClick={(e) => {
@@ -47,21 +47,21 @@ const SortableField = ({ field }: { field: FormField }) => {
       <button
         {...attributes}
         {...listeners}
-        className="cursor-grab active:cursor-grabbing text-slate-300 hover:text-slate-500 p-1"
+        className="cursor-grab active:cursor-grabbing text-white hover:text-slate-500 p-1"
       >
         <GripVertical className="w-5 h-5" />
       </button>
 
       <div className="flex-1">
         <div className="flex items-center gap-2 mb-1">
-          <span className="text-xs font-bold uppercase text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+          <span className="text-xs font-bold uppercase text-white bg-gray-700 px-2 py-0.5 rounded">
             {field.type}
           </span>
           {field.validation.required && (
-            <span className="text-xs text-red-500 font-medium">*Req</span>
+            <span className="text-xs text-red-500 font-medium">*Required</span>
           )}
         </div>
-        <p className="font-medium text-slate-700">{field.label}</p>
+        <p className="font-medium text-white">{field.label}</p>
         <p className="text-xs text-slate-400 font-mono mt-0.5">
           name: {field.name}
         </p>
@@ -72,7 +72,7 @@ const SortableField = ({ field }: { field: FormField }) => {
           e.stopPropagation();
           removeField(field.id);
         }}
-        className="opacity-0 group-hover:opacity-100 p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all"
+        className="opacity-0 group-hover:opacity-100 p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all cursor-pointer"
       >
         <Trash2 className="w-4 h-4" />
       </button>
@@ -94,7 +94,7 @@ export const Canvas = () => {
 
   return (
     <main
-      className="flex-1 bg-slate-50/50 p-8 overflow-y-auto"
+      className="flex-1 bg-gray-900 p-8 overflow-y-auto"
       onClick={() => setSelectedField(null)}
     >
       <div className="max-w-2xl mx-auto">
