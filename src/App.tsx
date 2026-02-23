@@ -2,35 +2,29 @@ import { useState } from "react";
 import { Canvas } from "./components/Canvas";
 import { PropertiesPanel } from "./components/PropertiesPanel";
 import { Sidebar } from "./components/Sidebar";
-import { Blocks, Menu } from "lucide-react";
-import clsx from "clsx"; // Make sure to import clsx
+import clsx from "clsx";
+import { useExport } from "./hooks/useExport";
+import { generateZodSchema } from "./utils/code-generator";
+import { useFormStore } from "./stores/useFormStore";
+import Header from "./components/Header";
 
 function App() {
-  // State to track if the sidebar is open or closed
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Closed by default on mobile is usually better
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { copyToClipboard, exportJSON, exportZodCode } = useExport();
+  const { fields } = useFormStore();
+
+  function handleCopyToClipboard() {
+    const zodSchema = generateZodSchema(fields);
+    copyToClipboard(zodSchema);
+  }
 
   return (
     <div className="flex flex-col h-screen w-full bg-slate-50 text-slate-900 font-sans antialiased overflow-hidden">
-      {/* Header */}
-      <header className="flex items-center justify-between px-4 lg:px-6 h-14 bg-white border-b border-slate-200 shrink-0 z-20">
-        <div className="flex items-center gap-3">
-          {/* Sidebar Toggle Button */}
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="p-2 -ml-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-            aria-label="Toggle Sidebar"
-          >
-            <Menu className="w-5 h-5" />
-          </button>
-
-          <div className="flex items-center gap-2 text-blue-600">
-            <Blocks className="w-6 h-6" />
-            <h1 className="font-bold text-lg tracking-tight hidden sm:block">
-              Schematic Form Builder
-            </h1>
-          </div>
-        </div>
-      </header>
+      <Header
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+        handleCopyToClipboard={handleCopyToClipboard}
+      />
 
       {/* Main Area */}
       <main className="flex flex-col lg:flex-row flex-1 overflow-y-auto lg:overflow-hidden">
