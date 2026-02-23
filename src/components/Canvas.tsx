@@ -108,8 +108,8 @@ export const Canvas = () => {
           >
             <div className="flex flex-col gap-3 min-h-125">
               {fields.length === 0 ? (
-                <div className="flex flex-col items-center justify-center h-64 border-2 border-dashed border-slate-200 rounded-xl bg-slate-50/50 text-slate-400">
-                  <p>Drag & Drop fields from the toolbox</p>
+                <div className="flex flex-col items-center justify-center h-64 border-2 border-dashed border-slate-200 rounded-xl bg-slate-600 text-slate-400">
+                  <p>Add Fields from the Toolbox in the Sidebar</p>
                 </div>
               ) : (
                 fields.map((field) => (
