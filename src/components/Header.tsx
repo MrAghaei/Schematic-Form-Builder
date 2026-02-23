@@ -35,7 +35,7 @@ export default function Header({
           </h1>
         </div>
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-1 2xl:gap-3">
         <Button onClick={handleCopyToClipboard}>Copy To Clipboard</Button>
         <Button onClick={handleExportJSON}>Export JSON</Button>
         <Button onClick={handleExportSchema}>Export Schema.ts</Button>

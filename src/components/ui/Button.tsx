@@ -5,7 +5,7 @@ export default function Button({
   return (
     <button
       {...props}
-      className="cursor-pointer bg-blue-500 text-white rounded-xl px-2 py-1 text-[16px]"
+      className="cursor-pointer bg-blue-500 text-white rounded-xl px-2 py-1 text-[10px] xl:text-[16px]"
     >
       {children}
     </button>
