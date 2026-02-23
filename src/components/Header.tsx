@@ -17,18 +17,18 @@ export default function Header({
   handleExportSchema,
 }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-4 lg:px-6 h-14 bg-white border-b border-slate-200 shrink-0 z-20">
+    <header className="flex items-center justify-between px-4 lg:px-6 h-14 bg-gray-900 border-b border-slate-600 shrink-0 z-20">
       <div className="flex items-center gap-3">
         {/* Sidebar Toggle Button */}
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-2 -ml-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+          className="p-2 -ml-2 text-slate-200 hover:text-blue-600 rounded-lg transition-colors cursor-pointer"
           aria-label="Toggle Sidebar"
         >
           <Menu className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-2 text-blue-600">
+        <div className="flex items-center gap-2 text-blue-200">
           <Blocks className="w-6 h-6" />
           <h1 className="font-bold text-lg tracking-tight hidden sm:block">
             Schematic Form Builder

@@ -43,9 +43,9 @@ function App() {
           {/* Collapsible Sidebar */}
           <aside
             className={clsx(
-              "shrink-0 bg-white flex flex-col z-10 transition-all duration-300 ease-in-out border-slate-200 relative",
+              "shrink-0 bg-gray-800 flex flex-col z-10 transition-all duration-300 ease-in-out relative",
               isSidebarOpen
-                ? "w-20 lg:w-64 border-r opacity-100"
+                ? "w-20 lg:w-64 opacity-100"
                 : "w-0 border-r-0 opacity-0 overflow-hidden",
             )}
           >
@@ -61,7 +61,7 @@ function App() {
         </div>
 
         {/* Properties Panel */}
-        <aside className="w-full lg:w-80 xl:w-96 shrink-0 bg-white flex flex-col lg:border-l border-slate-200 lg:overflow-y-auto overflow-x-hidden z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.1)] lg:shadow-none">
+        <aside className="w-full lg:w-80 xl:w-96 shrink-0 bg-gray-800 flex flex-col lg:border-l border-slate-600 lg:overflow-y-auto overflow-x-hidden z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.1)] lg:shadow-none">
           <PropertiesPanel />
         </aside>
       </main>
