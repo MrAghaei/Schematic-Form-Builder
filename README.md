@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# 📝 Schematic Form Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive frontend application for visually building forms and automatically generating Zod validation schemas. Designed to eliminate manual and repetitive schema writing.
 
-Currently, two official plugins are available:
+<img width="1916" height="957" alt="image" src="https://github.com/user-attachments/assets/ad21ab70-0ec2-4211-85c9-87ab93d482af" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 🚀 Live Demo
+[**View Deployed App**](https://schematic-form-builder.vercel.app/) 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
+* **Framework:** React + Vite 
+* **Language:** TypeScript
+* **State Management:** Zustand (for Canvas state)
+* **Schema Generation:** Zod
+* **Styling:** Tailwind CSS
+* **Drag & Drop / Interactions:** dnd kit
 
-## Expanding the ESLint configuration
+## ✨ Features
+* **Interactive Canvas:** Visually construct forms by adding components from the Toolbox (Text Input, Number, Email, Textarea, Checkbox, Select).
+* **Live Output Generation:** Real-time generation of the Zod schema (`schema.ts`) as you build and modify the form layout.
+* **Dynamic Properties Panel:** Select any field on the canvas to configure its specific validation rules, placeholders, and requirements.
+* **Versatile Export Options:** Instantly copy the generated code to your clipboard, export the configuration as a JSON file, or download the exact `schema.ts` file.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🏃‍♂️ Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1.  **Clone the Repository**
+```bash
+git clone https://github.com/MrAghaei/Schematic-Form-Builder.git
+cd Schematic-Form-Builder
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install Dependencies**
+```bash
+pnpm install
+```
+3. **Run Development Server**
+```bash
+pnpm run dev
 ```
