@@ -5,12 +5,16 @@ interface HeaderProps {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (isOpen: boolean) => void;
   handleCopyToClipboard: () => void;
+  handleExportJSON: () => void;
+  handleExportSchema: () => void;
 }
 
 export default function Header({
   isSidebarOpen,
   setIsSidebarOpen,
   handleCopyToClipboard,
+  handleExportJSON,
+  handleExportSchema,
 }: HeaderProps) {
   return (
     <header className="flex items-center justify-between px-4 lg:px-6 h-14 bg-white border-b border-slate-200 shrink-0 z-20">
@@ -31,10 +35,10 @@ export default function Header({
           </h1>
         </div>
       </div>
-      <div className="flex">
+      <div className="flex gap-3">
         <Button onClick={handleCopyToClipboard}>Copy To Clipboard</Button>
-        <Button>Export JSON</Button>
-        <Button>Export Schema.ts</Button>
+        <Button onClick={handleExportJSON}>Export JSON</Button>
+        <Button onClick={handleExportSchema}>Export Schema.ts</Button>
       </div>
     </header>
   );

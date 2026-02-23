@@ -18,12 +18,22 @@ function App() {
     copyToClipboard(zodSchema);
   }
 
+  function handleExportJSON() {
+    exportJSON(fields);
+  }
+
+  function handleExportSchema() {
+    exportZodCode(fields);
+  }
+
   return (
     <div className="flex flex-col h-screen w-full bg-slate-50 text-slate-900 font-sans antialiased overflow-hidden">
       <Header
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
         handleCopyToClipboard={handleCopyToClipboard}
+        handleExportJSON={handleExportJSON}
+        handleExportSchema={handleExportSchema}
       />
 
       {/* Main Area */}
